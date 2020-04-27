@@ -1,20 +1,20 @@
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, Image } from 'react-native';
 import Estilos from './estilo'
 
-function MenuCantina({navigation}) {
+function MenuLogin({navigation}) {
     return (
         <View style = {Estilos.container}>
         <Image source={require('../../imagens/logo-jornada.png')} style = {Estilos.logo}></Image>
         <Button
-            title="Ler Almoço"
-            onPress={() => navigation.navigate('LerAlmoço')}
+            title="Login"
+            onPress={() => navigation.navigate('Login')}
         />
         <Button
-            title="Histórico"
-            onPress={() => navigation.navigate('Histórico')}
+            title="Cadastro"
+            onPress={() => navigation.navigate('Cadastro')}
         />
         </View>
     );
   }
-export default MenuCantina  
+export default MenuLogin
