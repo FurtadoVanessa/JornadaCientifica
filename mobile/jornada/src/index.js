@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react'
-import Rotas from './rotas'
+import Main from './telas/main/main'
 
-const App = () => <Rotas />
+const App = () => <Main/>
 
 export default App
