@@ -12,7 +12,7 @@ function MenuCantina({navigation}) {
         />
         <Button
             title="Histórico"
-            onPress={() => navigation.navigate('Histórico')}
+            onPress={() => navigation.navigate('HistoricoCantina')}
         />
         </View>
     );

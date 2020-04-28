@@ -1,21 +1,23 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import { Button, View, Text } from 'react-native';
 import Estilos from './estilo'
 
-import {signIn} from '../../serviços/auth'
-
+import AuthContexto from '../../contexto/contextoAuth'
 
 const Login = () => {
 
-  async function handleSignIn (){
-    const response = await signIn()
-    console.log(response)
+  const { signed, user, signIn } = useContext(AuthContexto)
+
+  console.log(signed)
+  console.log(user)
+
+  function handleSignIn (){
+    signIn();
   }
 
   return (
     <View style={Estilos.container}>
       <Button style={Estilos.botaoEntrar} title = 'Entrar' onPress={handleSignIn}/>
-      
     </View>
   );
   }
