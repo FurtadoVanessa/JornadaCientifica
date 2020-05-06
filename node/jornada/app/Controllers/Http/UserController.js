@@ -5,10 +5,10 @@ const Token = use("App/Models/Token");
 
 class UserController {
 
-    async store({request}){
+    async store({request}, response){
         const data = request.post()
         const user = await User.create(data)
-        return user;
+        return user
     }
 
     async login ({ request, auth }) {
