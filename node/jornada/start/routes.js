@@ -10,10 +10,17 @@ Route.group(() => {
     Route.post('/category', 'CategoryController.store')
     Route.post('/modality', 'ModalityController.store')
     Route.post('/project', 'ProjectController.store')
+    Route.post('/event', 'EventController.store')
+    Route.post('/userProject', 'UserProjectController.store')
+    Route.post('/certificate', 'CertificateController.store')
 
 }).middleware(['auth', 'admin'])
 
+Route.group(() => {
 
+    Route.post('/grade', 'GradeController.store')
+
+}).middleware(['auth', 'evaluator'])
 
 Route.group(() => {
 
@@ -21,8 +28,15 @@ Route.group(() => {
     Route.get('/project', 'ProjectController.index')
     Route.get('/modality', 'ModalityController.index')
     Route.get('/category', 'CategoryController.index')
+    Route.get('/grade', 'GradeController.index')
+    Route.get('/userProject', 'UserProjectController.index') 
+    Route.get('/meal', 'MealController.index')
+    Route.get('/event', 'EventController.index')
+    Route.get('/certificate', 'CertificateController.index')
 
 }).middleware(['auth'])
+
+
 
 
 Route.on('/').render('welcome')
