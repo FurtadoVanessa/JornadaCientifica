@@ -13,6 +13,7 @@ Route.group(() => {
     Route.post('/event', 'EventController.store')
     Route.post('/userProject', 'UserProjectController.store')
     Route.post('/certificate', 'CertificateController.store')
+    Route.post('/type', 'TypeController.store')
 
 }).middleware(['auth', 'admin'])
 
@@ -32,6 +33,7 @@ Route.group(() => {
     Route.get('/userProject', 'UserProjectController.index') 
     Route.get('/meal', 'MealController.index')
     Route.get('/event', 'EventController.index')
+    Route.get('/type', 'TypeController.index')
     Route.get('/certificate', 'CertificateController.index')
 
 }).middleware(['auth'])
