@@ -35,6 +35,7 @@ O ```userType``` retornará qual o tipo de usuário, sendo
 >0 - cantina
 >1 - participante
 >2 - avaliador
+>3 - admnistrador
 
 Esse deverá ser usado para direcionamento das telas de acordo com o tipo de usuário.
 
