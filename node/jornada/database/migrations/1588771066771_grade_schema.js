@@ -7,7 +7,7 @@ class GradeSchema extends Schema {
   up () {
     this.create('grades', (table) => {
       table.increments()
-      table.integer().unsigned().notNullable()
+      table.integer('grade').unsigned().notNullable()
       table.integer('evaluator_id').unsigned().notNullable().references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE')
       table.integer('project_id').unsigned().notNullable().references('id').inTable('projects').onUpdate('CASCADE').onDelete('CASCADE')
       table.timestamps()
