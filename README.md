@@ -60,3 +60,156 @@ deverá ser passado pelo corpo da requisição um JSON contendo:
 Os campos em ```vermelho``` são ```obrigatórios```, porém os demais campos devem ser obrigatórios para os casos de participantes e avaliadores.
 
 Será retornado apenas uma resposta com status ```201```, que significa ```criado```.
+
+
+## Projeto de usuário
+Para realizar cadastro de projeto, a requisição deve ser feita com usuário de nível administrador e deve ser do tipo POST, a rota deverá ser:
+>/userProject
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+Para realizar a consulta aos projetos do usuário a requisição deve ser feita com usuário logado e deve ser do tipo GET, a rota deverá ser:
+>/userProject
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+## Modalidade
+Para realizar cadastro de modalidade, a requisição deve ser feita com usuário de nível administrador e deve ser do tipo POST, a rota deverá ser:
+>/modality
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+Para realizar a consulta as modalidades a requisição deve ser feita com usuário logado e deve ser do tipo GET, a rota deverá ser:
+>/modality
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+## Categoria
+Para realizar cadastro de categoria, a requisição deve ser feita com usuário de nível administrador, a rota deverá ser:
+>/category
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+Para realizar a consulta as categorias deve ser feita com usuário logado e deve ser do tipo GET, a rota deverá ser:
+>/category
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+## Tipo
+Para realizar cadastro de tipo, a requisição deve ser feita com usuário de nível administrador, a rota deverá ser:
+>/type
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+Para realizar a consulta aos tiposa requisição deve ser feita com usuário logado e deve ser do tipo GET, a rota deverá ser:
+>/types
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+## Certificados
+Para realizar cadastro de certificado, a requisição deve ser feita com usuário de nível administrador, a rota deverá ser:
+>/certificate
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+Para realizar a consulta aos certificados do usuário a requisição deve ser feita com usuário logado e deve ser do tipo GET, a rota deverá ser:
+>/certificate
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+## Evento
+Para realizar cadastro de projeto de usuário, a requisição deve ser feita com usuário de nível administrador, a rota deverá ser:
+>/event
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+Para realizar a consulta aos eventos do usuário a requisição deve ser feita com usuário logado e deve ser do tipo GET, a rota deverá ser:
+>/events
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+## Notas
+Para realizar cadastro de projeto de usuário, a requisição deve ser feita com usuário de nível avaliador ou superior, a rota deverá ser:
+>/grade
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+Para realizar a consulta as notas a requisição deve ser feita com usuário logado e deve ser do tipo GET, a rota deverá ser:
+>/grades
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+## Logout
+Para realizar o logout do usuário a requisição deve ser feita com usuário logado e deve ser do tipo POST, a rota deverá ser:
+>/logout
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
+
+## Acesso ao ticket de refeição
+Para realizar a consulta aos tickets de refeição a requisição deve ser feita com usuário logado e deve ser do tipo GET, a rota deverá ser:
+>/meal
+
+deverá ser passado pelo corpo da requisição um JSON contendo:
+
+> {
+    COLOCAR O JSON AQUI
+}
