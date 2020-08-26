@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import {TouchableOpacity} from 'react-native';
-export const ButtonStyled = styled(TouchableOpacity)`
-  /* Adapt the colors based on primary prop */
-  background: gray;
-  color: gray;
+import {TouchableOpacity, Text} from 'react-native';
+export const ButtonContainer = styled(TouchableOpacity)`
+  background-color: #2f9e41;
+  padding: 10px 200px;
+  margin: 10px;
+  border-radius: 10px;
+`;
 
-  font-size: 14px;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
+export const ButtonText = styled(Text)`
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffff;
 `;

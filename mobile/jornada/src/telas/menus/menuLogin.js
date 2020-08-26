@@ -1,6 +1,7 @@
 import * as React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import Estilos from './estilo';
+import {ButtonContainer, ButtonText} from '../../components/Button';
 
 function MenuLogin({navigation}) {
   return (
@@ -10,16 +11,12 @@ function MenuLogin({navigation}) {
         style={Estilos.logo}
       />
       <View>
-        <TouchableOpacity
-          style={Estilos.botaoContainer}
-          onPress={() => navigation.navigate('Login')}>
-          <Text style={Estilos.botaoText}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={Estilos.botaoContainer}
-          onPress={() => navigation.navigate('Cadastro')}>
-          <Text style={Estilos.botaoText}>Cadastro</Text>
-        </TouchableOpacity>
+        <ButtonContainer onPress={() => navigation.navigate('Login')}>
+          <ButtonText>Login</ButtonText>
+        </ButtonContainer>
+        <ButtonContainer onPress={() => navigation.navigate('Cadastro')}>
+          <ButtonText>Cadastro</ButtonText>
+        </ButtonContainer>
       </View>
     </View>
   );

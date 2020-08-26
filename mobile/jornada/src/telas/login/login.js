@@ -1,24 +1,28 @@
-import React, { useContext } from 'react';
-import { Button, View, Text } from 'react-native';
-import Estilos from './estilo'
-
-import AuthContexto from '../../contexto/contextoAuth'
+import React, {useContext} from 'react';
+import {View, Text} from 'react-native';
+import Estilos from './estilo';
+import {TextInputStyled} from '../../components/Form';
+import {ButtonContainer, ButtonText} from '../../components/Button';
+import AuthContexto from '../../contexto/contextoAuth';
 
 const Login = () => {
+  const {signed, user, signIn} = useContext(AuthContexto);
 
-  const { signed, user, signIn } = useContext(AuthContexto)
+  console.log(signed);
+  console.log(user);
 
-  console.log(signed)
-  console.log(user)
-
-  function handleSignIn (){
+  function handleSignIn() {
     signIn();
   }
 
   return (
     <View style={Estilos.container}>
-      <Button style={Estilos.botaoEntrar} title = 'Entrar' onPress={handleSignIn}/>
+      <TextInputStyled />
+      <TextInputStyled secureTextEntry />
+      <ButtonContainer onPress={handleSignIn}>
+        <ButtonText>Entrar</ButtonText>
+      </ButtonContainer>
     </View>
   );
-  }
-export default Login  
+};
+export default Login;
