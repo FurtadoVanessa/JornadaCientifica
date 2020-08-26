@@ -1,20 +1,27 @@
 import * as React from 'react';
-import { Button, View, Text, Image } from 'react-native';
-import Estilos from './estilo'
+import {View, Text, Image, TouchableOpacity} from 'react-native';
+import Estilos from './estilo';
 
 function MenuLogin({navigation}) {
-    return (
-        <View style = {Estilos.container}>
-        <Image source={require('../../imagens/logo-jornada.png')} style = {Estilos.logo}></Image>
-        <Button
-            title="Login"
-            onPress={() => navigation.navigate('Login')}
-        />
-        <Button
-            title="Cadastro"
-            onPress={() => navigation.navigate('Cadastro')}
-        />
-        </View>
-    );
-  }
-export default MenuLogin
+  return (
+    <View style={Estilos.container}>
+      <Image
+        source={require('../../imagens/logo-jornada.png')}
+        style={Estilos.logo}
+      />
+      <View>
+        <TouchableOpacity
+          style={Estilos.botaoContainer}
+          onPress={() => navigation.navigate('Login')}>
+          <Text style={Estilos.botaoText}>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={Estilos.botaoContainer}
+          onPress={() => navigation.navigate('Cadastro')}>
+          <Text style={Estilos.botaoText}>Cadastro</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+export default MenuLogin;
