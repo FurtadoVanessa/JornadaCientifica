@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import Estilos from './estilo';
 import {TextInputStyled} from '../../components/Form';
 import {ButtonContainer, ButtonText} from '../../components/Button';
@@ -17,11 +17,22 @@ const Login = () => {
 
   return (
     <View style={Estilos.container}>
-      <TextInputStyled />
-      <TextInputStyled secureTextEntry />
-      <ButtonContainer onPress={handleSignIn}>
-        <ButtonText>Entrar</ButtonText>
-      </ButtonContainer>
+      <Image
+        source={require('../../imagens/logo-jornada.png')}
+        style={Estilos.logo}
+      />
+      <View style={Estilos.formulario}>
+        <Text style={Estilos.texto}>E-mail</Text>
+        <TextInputStyled />
+        <Text style={Estilos.texto}>Senha</Text>
+        <TextInputStyled secureTextEntry />
+        <ButtonContainer onPress={handleSignIn}>
+          <ButtonText>Entrar</ButtonText>
+        </ButtonContainer>
+        <TouchableOpacity>
+          <Text style={Estilos.esqueceuSenha}>Esqueceu sua senha?</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
