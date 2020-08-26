@@ -18,6 +18,7 @@ const Login = () => {
   return (
     <View style={Estilos.container}>
       <Image
+        resizeMode={'contain'}
         source={require('../../imagens/logo-jornada.png')}
         style={Estilos.logo}
       />
