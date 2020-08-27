@@ -16,7 +16,7 @@ function MenuParticipante({navigation}) {
   return (
     <View style={Estilos.container}>
       <TouchableOpacity onPress={() => handleSignout()} style={Estilos.logout}>
-        <Icon name="log-out" size={26} color="#F00" />
+        <Icon name="log-out" size={26} color="#E00" />
       </TouchableOpacity>
       <Image
         resizeMode={'contain'}
