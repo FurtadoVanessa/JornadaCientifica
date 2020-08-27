@@ -12,6 +12,11 @@ const Estilos = StyleSheet.create({
     marginVertical: Dimensions.get('window').height * 0.01,
     width: Dimensions.get('window').width * 0.8,
   },
+  logout: {
+    alignSelf: 'flex-end',
+    paddingRight: 4,
+    paddingTop: 4,
+  },
 });
 
 export default Estilos;
