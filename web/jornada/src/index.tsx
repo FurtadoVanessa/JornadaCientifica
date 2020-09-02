@@ -50,7 +50,7 @@ function Greeting(props: { isLoggedIn: any; }) {
 ReactDOM.render(
   //isLoggedIn={false} -> Página de Login
   //isLoggedIn={true} -> Menu principal
-  <Greeting isLoggedIn={false} />,
+  <Greeting isLoggedIn={true} />,
   document.getElementById('root')
 );
 
