@@ -1,5 +1,6 @@
 import React, {createContext, useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
+import CookieManager from '@react-native-community/cookies';
 import * as auth from '../serviços/auth';
 
 const AuthContexto = createContext({signed: false, user: {}});
@@ -14,7 +15,7 @@ export const AuthProvider = ({children}) => {
       const storageToken = await AsyncStorage.getItem('@RNAuth:token');
 
       if (storageUser && storageToken) {
-        setUser(JSON.parse(storageUser));
+        setUser(storageUser);
         setLoading(false);
       } else if (!storageUser && !storageToken) {
         setLoading(false);
@@ -24,18 +25,33 @@ export const AuthProvider = ({children}) => {
     loadStorageData();
   }, []);
 
-  async function signIn() {
-    const response = await auth.signIn();
-    setUser(response.user);
+  async function signIn(username, password) {
+    await CookieManager.clearAll();
+    setLoading(true);
+    const response = await auth.signIn({
+      user: username,
+      password: password,
+    });
 
-    await AsyncStorage.setItem('@RNAuth:user', JSON.stringify(response.user));
-    await AsyncStorage.setItem('@RNAuth:token', response.token);
+    if (response.status === 200 && response.data.token !== undefined) {
+      await AsyncStorage.setItem('@RNAuth:user', username);
+      await AsyncStorage.setItem('@RNAuth:token', response.data.token);
+      setUser(username);
+    } else {
+      console.log(
+        'Erro no login, verifique o seu email e senha, pode ser o servidor também vai saber né',
+      );
+    }
+    setLoading(false);
   }
 
-  function signOut() {
-    AsyncStorage.clear().then(() => {
+  async function signOut() {
+    setLoading(true);
+    await AsyncStorage.clear().then(() => {
       setUser(null);
     });
+    await CookieManager.clearAll(); //Sem biscoitinho pra voce Adonis FDP
+    setLoading(false);
   }
 
   function resetPassword() {

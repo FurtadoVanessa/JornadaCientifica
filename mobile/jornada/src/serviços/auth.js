@@ -1,11 +1,15 @@
-export function signIn() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve({
-        token: 'hudsiahas7787sdas7',
-        user: 'João',
-        email: 'joao@gmail.com',
-      });
-    }, 2000);
-  });
+import {axios} from './axios';
+
+export async function signIn({user, password}) {
+  return await axios
+    .post('/login', {
+      email: user, //'yuri@email.com'
+      password: password, //'senha123'
+    })
+    .then(function(response) {
+      return response;
+    })
+    .catch(function(response) {
+      return response;
+    });
 }

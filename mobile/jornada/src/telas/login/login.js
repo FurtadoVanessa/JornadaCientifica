@@ -1,5 +1,6 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {View, ScrollView, Text, TouchableOpacity, Image} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import Estilos from './estilo';
 import {TextInputStyled} from '../../components/Form';
@@ -9,12 +10,16 @@ import AuthContexto from '../../contexto/contextoAuth';
 
 const Login = ({navigation}) => {
   const {signed, user, signIn} = useContext(AuthContexto);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  console.log(signed);
-  console.log(user);
+  // console.log(signed);
+  // console.log(user);
 
-  function handleSignIn() {
-    signIn();
+  async function handleSignIn() {
+    // console.log('Usuario', email);
+    // console.log('Senha', password);
+    signIn(email, password);
   }
 
   return (
@@ -27,9 +32,13 @@ const Login = ({navigation}) => {
         />
         <View style={Estilos.formulario}>
           <Text style={Estilos.texto}>E-mail</Text>
-          <TextInputStyled />
+          <TextInputStyled onChangeText={mail => setEmail(mail)} />
           <Text style={Estilos.texto}>Senha</Text>
-          <TextInputStyled secureTextEntry onSubmitEditing={handleSignIn} />
+          <TextInputStyled
+            secureTextEntry
+            onSubmitEditing={handleSignIn}
+            onChangeText={senha => setPassword(senha)}
+          />
           <ButtonContainer onPress={handleSignIn}>
             <ButtonText>Entrar</ButtonText>
           </ButtonContainer>
