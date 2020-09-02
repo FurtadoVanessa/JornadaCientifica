@@ -7,6 +7,7 @@ import Agenda from '../telas/agenda/agenda';
 import CheckIn from '../telas/checkIn/checkIn';
 import Historico from '../telas/historico/historico';
 import Almoço from '../telas/almoço/almoço';
+import Pitch from '../telas/pitch/pitch';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +18,7 @@ function RotaParticipante() {
       <Stack.Screen name="Agenda" component={Agenda} />
       <Stack.Screen name="CheckIn" component={CheckIn} />
       <Stack.Screen name="Histórico" component={Historico} />
-      <Stack.Screen name="Almoço" component={Almoço} />
+      <Stack.Screen name="Pitch" component={Pitch} />
     </Stack.Navigator>
   );
 }

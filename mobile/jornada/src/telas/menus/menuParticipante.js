@@ -32,8 +32,8 @@ function MenuParticipante({navigation}) {
       <ButtonContainer onPress={() => navigation.navigate('Histórico')}>
         <ButtonText>Histórico</ButtonText>
       </ButtonContainer>
-      <ButtonContainer onPress={() => navigation.navigate('Almoço')}>
-        <ButtonText>Almoço</ButtonText>
+      <ButtonContainer onPress={() => navigation.navigate('Pitch')}>
+        <ButtonText>Pitch</ButtonText>
       </ButtonContainer>
     </View>
   );
