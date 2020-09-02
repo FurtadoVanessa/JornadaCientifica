@@ -16,8 +16,6 @@ const Login = ({navigation}) => {
   // console.log(user);
 
   async function handleSignIn() {
-    // console.log('Usuario', email);
-    // console.log('Senha', password);
     signIn(email, password);
   }
 

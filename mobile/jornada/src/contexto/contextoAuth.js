@@ -39,15 +39,9 @@ export const AuthProvider = ({children}) => {
       await AsyncStorage.setItem('@RNAuth:token', response.data.token);
       setUser(username);
     } else {
-      Alert.alert(
-        "Erro",
-        "E-mail e/ou senha incorretos",
-        [
-          { text: "OK"}
-        ],
-        { cancelable: false }
-      );
-
+      Alert.alert('Erro', 'E-mail e/ou senha incorretos', [{text: 'OK'}], {
+        cancelable: true,
+      });
     }
     setLoading(false);
   }
@@ -61,14 +55,21 @@ export const AuthProvider = ({children}) => {
     setLoading(false);
   }
 
-  function resetPassword() {
-    //Implementar função de recuperação de senha aqui
-    return console.log('Implemente a função aqui');
+  function resetPassword(email) {
+    Alert.alert(
+      'Aviso',
+      'Um e-mail com uma nova senha foi enviado, verifique sua caixa de entrada. Mentira kkkkk',
+      [{text: 'OK'}],
+      {
+        cancelable: true,
+      },
+    );
+    return console.log('Implemente a de recuperação de senha', email);
   }
 
   return (
     <AuthContexto.Provider
-      value={{signed: !!user, user, signIn, signOut, loading}}>
+      value={{signed: !!user, user, signIn, signOut, loading, resetPassword}}>
       {children}
     </AuthContexto.Provider>
   );
