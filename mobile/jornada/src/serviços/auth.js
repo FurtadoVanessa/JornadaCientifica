@@ -13,3 +13,14 @@ export async function signIn({user, password}) {
       return response;
     });
 }
+
+export async function register(data) {
+  return await axios
+    .post('/register', data)
+    .then(function(response) {
+      return response;
+    })
+    .catch(function(response) {
+      return response;
+    });
+}

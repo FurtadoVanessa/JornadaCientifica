@@ -26,6 +26,47 @@ export const AuthProvider = ({children}) => {
     loadStorageData();
   }, []);
 
+  async function register(
+    name,
+    email,
+    course,
+    institution,
+    campus,
+    whatsapp,
+    password,
+    retryPassword,
+    type,
+  ) {
+    setLoading(true);
+    const data = {
+      username: name,
+      email: email,
+      course: course,
+      school: institution,
+      campus: campus,
+      whatsapp: whatsapp,
+      password: password,
+      type: type,
+    };
+
+    const response = await auth.register(data);
+    if (response.status === 200) {
+      Alert.alert('Aviso', 'Cadastrado com sucesso', [{text: 'OK'}], {
+        cancelable: true,
+      });
+    } else {
+      Alert.alert(
+        'Erro ao cadastrar',
+        'Verifique se o e-mail já foi cadastrado, tente logar-se',
+        [{text: 'OK'}],
+        {
+          cancelable: true,
+        },
+      );
+    }
+    setLoading(false);
+  }
+
   async function signIn(username, password) {
     await CookieManager.clearAll();
     setLoading(true);
@@ -69,7 +110,16 @@ export const AuthProvider = ({children}) => {
 
   return (
     <AuthContexto.Provider
-      value={{signed: !!user, user, signIn, signOut, loading, resetPassword}}>
+      value={{
+        signed: !!user,
+        user,
+        signIn,
+        signOut,
+        register,
+        loading,
+        resetPassword,
+        setLoading,
+      }}>
       {children}
     </AuthContexto.Provider>
   );

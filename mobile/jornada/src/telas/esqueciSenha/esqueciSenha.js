@@ -2,19 +2,21 @@ import React, {useContext} from 'react';
 import {View, ScrollView, Text, TextInput, Image} from 'react-native';
 
 import {useState} from 'react';
-import {TextInputStyled} from '../../components/Form';
 import {ButtonContainer, ButtonText} from '../../components/Button';
 import AuthContexto from '../../contexto/contextoAuth';
 import Estilos from './estilo';
 
 const EsqueciSenha = ({navigation}) => {
-  const {signed, user, resetPassword} = useContext(AuthContexto);
+  const {resetPassword} = useContext(AuthContexto);
   const [email, setEmail] = useState('');
 
-  console.log(signed);
-  console.log(user);
+  // console.log(signed);
+  // console.log(user);
 
   function handleLostPassword() {
+    if (email === '') {
+      return;
+    }
     resetPassword(email);
   }
 
