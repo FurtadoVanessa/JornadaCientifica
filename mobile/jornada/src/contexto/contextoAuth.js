@@ -50,7 +50,7 @@ export const AuthProvider = ({children}) => {
     await AsyncStorage.clear().then(() => {
       setUser(null);
     });
-    await CookieManager.clearAll(); //Sem biscoitinho pra voce Adonis FDP
+    await CookieManager.clearAll();
     setLoading(false);
   }
 

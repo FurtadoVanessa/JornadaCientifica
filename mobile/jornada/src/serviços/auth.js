@@ -3,8 +3,8 @@ import {axios} from './axios';
 export async function signIn({user, password}) {
   return await axios
     .post('/login', {
-      email: user, //'yuri@email.com'
-      password: password, //'senha123'
+      email: user,
+      password: password,
     })
     .then(function(response) {
       return response;
