@@ -1,6 +1,5 @@
 import React, {useContext, useState} from 'react';
 import {View, ScrollView, Text, TouchableOpacity, Image} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
 
 import Estilos from './estilo';
 import {TextInputStyled} from '../../components/Form';

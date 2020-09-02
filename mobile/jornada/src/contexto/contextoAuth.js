@@ -1,4 +1,5 @@
 import React, {createContext, useState, useEffect} from 'react';
+import {Alert} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import CookieManager from '@react-native-community/cookies';
 import * as auth from '../serviços/auth';
@@ -38,9 +39,15 @@ export const AuthProvider = ({children}) => {
       await AsyncStorage.setItem('@RNAuth:token', response.data.token);
       setUser(username);
     } else {
-      console.log(
-        'Erro no login, verifique o seu email e senha, pode ser o servidor também vai saber né',
+      Alert.alert(
+        "Erro",
+        "E-mail e/ou senha incorretos",
+        [
+          { text: "OK"}
+        ],
+        { cancelable: false }
       );
+
     }
     setLoading(false);
   }
