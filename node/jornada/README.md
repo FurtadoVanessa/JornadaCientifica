@@ -29,3 +29,11 @@ Run the following command to run startup migrations.
 ```js
 adonis migration:run
 ```
+
+### Running project
+
+Run the following command to run the project.
+
+```js
+adonis serve --dev
+```
