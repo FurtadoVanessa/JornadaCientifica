@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import MenuParticipante from '../telas/menus/menuParticipante';
 
@@ -8,6 +8,7 @@ import CheckIn from '../telas/checkIn/checkIn';
 import Historico from '../telas/historico/historico';
 import Almoço from '../telas/almoço/almoço';
 import Pitch from '../telas/pitch/pitch';
+import detalhesEvento from '../telas/detalhesEvento/detalhesEvento'
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,7 @@ function RotaParticipante() {
       <Stack.Screen name="CheckIn" component={CheckIn} />
       <Stack.Screen name="Histórico" component={Historico} />
       <Stack.Screen name="Pitch" component={Pitch} />
+      <Stack.Screen name="Detalhes do Evento" component={detalhesEvento} />
     </Stack.Navigator>
   );
 }
