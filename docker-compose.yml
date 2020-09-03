@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+    app:
+        container_name: jornadaNodeDocker
+        build:
+            context: "./node/jornada"
+            dockerfile: Dockerfile-node
+        command: npm start
+        ports:
+            - "3000:3000"
+        volumes:
+            - .:/usr/app   
+            
+   
