@@ -4,12 +4,15 @@ import {
   Text,
   View,
   Button,
-  TextInput,
   ScrollView,
   Picker,
   Alert,
 } from 'react-native';
 import {isEmail} from 'validator';
+
+import {TextInputStyled} from '../../components/Form';
+import {ButtonContainer, ButtonText} from '../../components/Button';
+import Estilos from './estilo';
 
 import {axios} from '../../serviços/axios';
 import AuthContexto from '../../contexto/contextoAuth';
@@ -46,9 +49,14 @@ export default function App() {
       return;
     }
     if (password.length < 6) {
-      Alert.alert('Erro', 'A senha é muito curta', [{text: 'OK'}], {
-        cancelable: true,
-      });
+      Alert.alert(
+        'Erro',
+        'A senha é muito curta (tamanho minimo 6 caracteres)',
+        [{text: 'OK'}],
+        {
+          cancelable: true,
+        },
+      );
       return;
     }
 
@@ -66,97 +74,41 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={{flex: 1, marginTop: 30}}>
-      <ScrollView style={{marginHorizontal: 30}}>
-        <View
-          style={{
-            alignSelf: 'flex-start',
-            width: 95,
-            height: 35,
-            marginTop: 15,
-          }}>
-          <Button title="Voltar" color="#2F9E41" />
-        </View>
-
-        <View style={{width: 300, height: 75}}>
+    <ScrollView>
+      <View style={Estilos.container}>
+        <View>
           <Text style={{textAlign: 'center'}}>Nome</Text>
-          <TextInput
-            style={{
-              height: 40,
-              borderColor: 'black',
-              borderWidth: 1,
-              textAlign: 'center',
-            }}
-            onChangeText={name1 => setName(name1)}
-          />
+          <TextInputStyled onChangeText={name1 => setName(name1)} />
         </View>
 
-        <View style={{width: 300, height: 75}}>
+        <View>
           <Text style={{textAlign: 'center'}}>Email</Text>
-          <TextInput
-            style={{
-              height: 40,
-              borderColor: 'black',
-              borderWidth: 1,
-              textAlign: 'center',
-            }}
-            onChangeText={email1 => setEmail(email1)}
-          />
+          <TextInputStyled onChangeText={email1 => setEmail(email1)} />
         </View>
 
-        <View style={{width: 300, height: 75}}>
+        <View>
           <Text style={{textAlign: 'center'}}>Curso</Text>
-          <TextInput
-            style={{
-              height: 40,
-              borderColor: 'black',
-              borderWidth: 1,
-              textAlign: 'center',
-            }}
-            onChangeText={course1 => setCourse(course1)}
-          />
+          <TextInputStyled onChangeText={course1 => setCourse(course1)} />
         </View>
 
-        <View style={{width: 300, height: 75}}>
+        <View>
           <Text style={{textAlign: 'center'}}>Instituição</Text>
-          <TextInput
-            style={{
-              height: 40,
-              borderColor: 'black',
-              borderWidth: 1,
-              textAlign: 'center',
-            }}
+          <TextInputStyled
             onChangeText={institution1 => setInstitution(institution1)}
           />
         </View>
 
-        <View style={{width: 300, height: 75}}>
+        <View>
           <Text style={{textAlign: 'center'}}>Campus</Text>
-          <TextInput
-            style={{
-              height: 40,
-              borderColor: 'black',
-              borderWidth: 1,
-              textAlign: 'center',
-            }}
-            onChangeText={campus1 => setCampus(campus1)}
-          />
+          <TextInputStyled onChangeText={campus1 => setCampus(campus1)} />
         </View>
 
-        <View style={{width: 300, height: 75}}>
+        <View>
           <Text style={{textAlign: 'center'}}>WhatsApp</Text>
-          <TextInput
-            style={{
-              height: 40,
-              borderColor: 'black',
-              borderWidth: 1,
-              textAlign: 'center',
-            }}
-            onChangeText={whatsapp1 => setWhatsapp(whatsapp1)}
-          />
+          <TextInputStyled onChangeText={whatsapp1 => setWhatsapp(whatsapp1)} />
         </View>
 
-        <View style={{width: 300, height: 75}}>
+        <View style={{width: 160, height: 75}}>
           <Text style={{textAlign: 'center'}}>Tipo de Usuário</Text>
           <Picker
             selectedValue={type}
@@ -168,38 +120,26 @@ export default function App() {
           </Picker>
         </View>
 
-        <View style={{width: 300, height: 75}}>
+        <View>
           <Text style={{textAlign: 'center'}}>Senha</Text>
-          <TextInput
-            style={{
-              height: 40,
-              borderColor: 'black',
-              borderWidth: 1,
-              textAlign: 'center',
-            }}
+          <TextInputStyled
             onChangeText={password1 => setPassword(password1)}
             secureTextEntry={true}
           />
         </View>
 
-        <View style={{width: 300, height: 75}}>
+        <View>
           <Text style={{textAlign: 'center'}}>Confirme sua Senha</Text>
-          <TextInput
-            style={{
-              height: 40,
-              borderColor: 'black',
-              borderWidth: 1,
-              textAlign: 'center',
-            }}
+          <TextInputStyled
             onChangeText={retryPassword1 => setRetryPassword(retryPassword1)}
             secureTextEntry={true}
           />
         </View>
 
-        <View style={{width: 300, height: 75}}>
-          <Button title="Cadastrar" color="#2F9E41" onPress={handleRegister} />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+        <ButtonContainer onPress={handleRegister}>
+          <ButtonText>Cadastrar</ButtonText>
+        </ButtonContainer>
+      </View>
+    </ScrollView>
   );
 }
