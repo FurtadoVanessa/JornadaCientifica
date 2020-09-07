@@ -4,6 +4,8 @@ const Estilos = StyleSheet.create({
   container: {
     alignItems: 'center',
     flex: 1,
+    paddingBottom: 25,
+    paddingTop: 25,
   },
 });
 

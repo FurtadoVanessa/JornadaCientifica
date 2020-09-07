@@ -1,6 +1,8 @@
 import * as React from 'react';
-import {Button, View, Image} from 'react-native';
+import {View, Image} from 'react-native';
 import Estilos from './estilo';
+
+import {StyledButton} from '../../components/Button';
 
 function MenuAvaliador({navigation}) {
   return (
@@ -10,13 +12,16 @@ function MenuAvaliador({navigation}) {
         source={require('../../imagens/logo-jornada.png')}
         style={Estilos.logo}
       />
-      <Button title="Avaliar" onPress={() => navigation.navigate('Avaliar')} />
-      <Button
-        title="Histórico"
+      <StyledButton
+        text="Avaliar"
+        onPress={() => navigation.navigate('Avaliar')}
+      />
+      <StyledButton
+        text="Histórico"
         onPress={() => navigation.navigate('Histórico')}
       />
-      <Button
-        title="Participante"
+      <StyledButton
+        text="Participante"
         onPress={() => navigation.navigate('Participante')}
       />
     </View>

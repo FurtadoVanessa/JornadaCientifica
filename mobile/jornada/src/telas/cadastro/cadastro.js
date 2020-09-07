@@ -1,20 +1,12 @@
 import React, {useState, useContext} from 'react';
-import {
-  SafeAreaView,
-  Text,
-  View,
-  Button,
-  ScrollView,
-  Picker,
-  Alert,
-} from 'react-native';
+import {SafeAreaView, Text, View, ScrollView, Alert} from 'react-native';
+import {Picker} from '@react-native-community/picker';
 import {isEmail} from 'validator';
 
-import {TextInputStyled} from '../../components/Form';
-import {ButtonContainer, ButtonText} from '../../components/Button';
+import {InputStyled} from '../../components/Form';
+import {StyledButton} from '../../components/Button';
 import Estilos from './estilo';
 
-import {axios} from '../../serviços/axios';
 import AuthContexto from '../../contexto/contextoAuth';
 
 export default function App() {
@@ -68,46 +60,31 @@ export default function App() {
       campus,
       whatsapp,
       password,
-      retryPassword,
       type,
     );
   }
 
   return (
     <ScrollView>
-      <View style={Estilos.container}>
-        <View>
-          <Text style={{textAlign: 'center'}}>Nome</Text>
-          <TextInputStyled onChangeText={name1 => setName(name1)} />
-        </View>
-
-        <View>
-          <Text style={{textAlign: 'center'}}>Email</Text>
-          <TextInputStyled onChangeText={email1 => setEmail(email1)} />
-        </View>
-
-        <View>
-          <Text style={{textAlign: 'center'}}>Curso</Text>
-          <TextInputStyled onChangeText={course1 => setCourse(course1)} />
-        </View>
-
-        <View>
-          <Text style={{textAlign: 'center'}}>Instituição</Text>
-          <TextInputStyled
-            onChangeText={institution1 => setInstitution(institution1)}
-          />
-        </View>
-
-        <View>
-          <Text style={{textAlign: 'center'}}>Campus</Text>
-          <TextInputStyled onChangeText={campus1 => setCampus(campus1)} />
-        </View>
-
-        <View>
-          <Text style={{textAlign: 'center'}}>WhatsApp</Text>
-          <TextInputStyled onChangeText={whatsapp1 => setWhatsapp(whatsapp1)} />
-        </View>
-
+      <SafeAreaView style={Estilos.container}>
+        <InputStyled text="Nome" onChangeText={name1 => setName(name1)} />
+        <InputStyled text="E-mail" onChangeText={email1 => setEmail(email1)} />
+        <InputStyled
+          text="Curso"
+          onChangeText={course1 => setCourse(course1)}
+        />
+        <InputStyled
+          text="Instituição"
+          onChangeText={institution1 => setInstitution(institution1)}
+        />
+        <InputStyled
+          text="Campus"
+          onChangeText={campus1 => setCampus(campus1)}
+        />
+        <InputStyled
+          text="WhatsApp"
+          onChangeText={whatsapp1 => setWhatsapp(whatsapp1)}
+        />
         <View style={{width: 160, height: 75}}>
           <Text style={{textAlign: 'center'}}>Tipo de Usuário</Text>
           <Picker
@@ -119,27 +96,18 @@ export default function App() {
             <Picker.Item label="Avaliador" value="2" />
           </Picker>
         </View>
-
-        <View>
-          <Text style={{textAlign: 'center'}}>Senha</Text>
-          <TextInputStyled
-            onChangeText={password1 => setPassword(password1)}
-            secureTextEntry={true}
-          />
-        </View>
-
-        <View>
-          <Text style={{textAlign: 'center'}}>Confirme sua Senha</Text>
-          <TextInputStyled
-            onChangeText={retryPassword1 => setRetryPassword(retryPassword1)}
-            secureTextEntry={true}
-          />
-        </View>
-
-        <ButtonContainer onPress={handleRegister}>
-          <ButtonText>Cadastrar</ButtonText>
-        </ButtonContainer>
-      </View>
+        <InputStyled
+          text="Senha"
+          onChangeText={password1 => setPassword(password1)}
+          secureTextEntry={true}
+        />
+        <InputStyled
+          text="Confirme sua senha"
+          onChangeText={retryPassword1 => setRetryPassword(retryPassword1)}
+          secureTextEntry={true}
+        />
+        <StyledButton text="Cadastrar" onPress={handleRegister} />
+      </SafeAreaView>
     </ScrollView>
   );
 }

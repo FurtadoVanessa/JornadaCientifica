@@ -34,7 +34,6 @@ export const AuthProvider = ({children}) => {
     campus,
     whatsapp,
     password,
-    retryPassword,
     type,
   ) {
     setLoading(true);
@@ -84,6 +83,7 @@ export const AuthProvider = ({children}) => {
         cancelable: true,
       });
     }
+    console.log(response);
     setLoading(false);
   }
 

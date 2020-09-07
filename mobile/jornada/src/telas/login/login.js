@@ -1,9 +1,15 @@
 import React, {useContext, useState} from 'react';
-import {View, ScrollView, Text, TouchableOpacity, Image} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 
 import Estilos from './estilo';
-import {TextInputStyled} from '../../components/Form';
-import {ButtonContainer, ButtonText} from '../../components/Button';
+import {InputStyled} from '../../components/Form';
+import {StyledButton} from '../../components/Button';
 
 import AuthContexto from '../../contexto/contextoAuth';
 
@@ -24,29 +30,24 @@ const Login = ({navigation}) => {
 
   return (
     <ScrollView>
-      <View style={Estilos.container}>
+      <SafeAreaView style={Estilos.container}>
         <Image
           resizeMode={'contain'}
           source={require('../../imagens/logo-jornada.png')}
           style={Estilos.logo}
         />
-        <View style={Estilos.formulario}>
-          <Text style={Estilos.texto}>E-mail</Text>
-          <TextInputStyled onChangeText={mail => setEmail(mail)} />
-          <Text style={Estilos.texto}>Senha</Text>
-          <TextInputStyled
-            secureTextEntry
-            onSubmitEditing={handleSignIn}
-            onChangeText={senha => setPassword(senha)}
-          />
-          <ButtonContainer onPress={handleSignIn}>
-            <ButtonText>Entrar</ButtonText>
-          </ButtonContainer>
-          <TouchableOpacity onPress={() => navigation.navigate('EsqueciSenha')}>
-            <Text style={Estilos.esqueceuSenha}>Esqueceu sua senha?</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+        <InputStyled text="E-mail" onChangeText={mail => setEmail(mail)} />
+        <InputStyled
+          text="Senha"
+          secureTextEntry={true}
+          onSubmitEditing={handleSignIn}
+          onChangeText={senha => setPassword(senha)}
+        />
+        <StyledButton text="Entrar" onPress={handleSignIn} />
+        <TouchableOpacity onPress={() => navigation.navigate('EsqueciSenha')}>
+          <Text style={Estilos.esqueceuSenha}>Esqueceu sua senha?</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
     </ScrollView>
   );
 };
