@@ -85,17 +85,17 @@ export default function App() {
           text="WhatsApp"
           onChangeText={whatsapp1 => setWhatsapp(whatsapp1)}
         />
-        <View style={{width: 160, height: 75}}>
-          <Text style={{textAlign: 'center'}}>Tipo de Usuário</Text>
+        <Text style={Estilos.texto}>Tipo de Usuário</Text>
+        <View style={Estilos.pickerContainer}>
           <Picker
             selectedValue={type}
-            style={{height: 40, borderWidth: 10}}
             onValueChange={(itemValue, itemIndex) => setType(itemValue)}
             mode={'dropdown'}>
             <Picker.Item label="Participante" value="1" />
             <Picker.Item label="Avaliador" value="2" />
           </Picker>
         </View>
+
         <InputStyled
           text="Senha"
           onChangeText={password1 => setPassword(password1)}
