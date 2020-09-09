@@ -24,3 +24,14 @@ export async function register(data) {
       return response;
     });
 }
+
+export async function getEvent(data) {
+  return await axios
+    .get('/event')
+    .then(function(response) {
+      return response;
+    })
+    .catch(function(response) {
+      return response;
+    });
+}
