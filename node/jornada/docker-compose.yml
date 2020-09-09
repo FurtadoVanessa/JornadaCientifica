@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  node-jornada:
+    build: .
+    networks:
+        - jornada
+    ports:
+      - "3333:3333"
+    container_name: node-jornada
+    restart: always
+
+networks:
+  jornada:
+    external: true

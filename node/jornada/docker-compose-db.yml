@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  banco-jornada:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: jornada
+    ports:
+    - "3306:3306"
+    volumes:
+    - "jornada-db:/var/lib/mysql"
+    networks:
+    - jornada
+    container_name: banco-jornada
+
+volumes:
+  jornada-db:
+
+networks:
+  jornada:
+    external: true

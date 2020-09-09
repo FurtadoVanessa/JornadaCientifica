@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
 export const axios = Axios.create({
-  baseURL: 'http://192.168.0.106:3333', //É o ip da minha máquina deve ser o mesmo valor do HOST no .env
+  baseURL: 'https://secret-shore-12290.herokuapp.com/',
   timeout: 20000,
 });
