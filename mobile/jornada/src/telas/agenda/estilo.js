@@ -20,14 +20,24 @@ const Estilos = StyleSheet.create({
     flexDirection: 'column',
     paddingHorizontal: 10,
     backgroundColor: '#ffffff',
-    borderWidth: 5,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
+    padding: 10,
+    // borderWidth: 5,
     borderRadius: 10,
-    borderColor: '#2F9E41',
+    // borderColor: '#2F9E41',
   },
 
   heads: {
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: 16,
   },
 
   simpleText: {

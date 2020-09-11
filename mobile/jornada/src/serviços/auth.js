@@ -1,7 +1,7 @@
-import {axios} from './axios';
+import {api} from './axios';
 
 export async function signIn({user, password}) {
-  return await axios
+  return await api
     .post('/login', {
       email: user,
       password: password,
@@ -15,20 +15,10 @@ export async function signIn({user, password}) {
 }
 
 export async function register(data) {
-  return await axios
+  return await api
     .post('/register', data)
     .then(function(response) {
-      return response;
-    })
-    .catch(function(response) {
-      return response;
-    });
-}
-
-export async function getEvent(data) {
-  return await axios
-    .get('/event')
-    .then(function(response) {
+      console.log(response);
       return response;
     })
     .catch(function(response) {

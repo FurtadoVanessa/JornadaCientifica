@@ -3,6 +3,7 @@ import {Alert} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import CookieManager from '@react-native-community/cookies';
 import * as auth from '../serviços/auth';
+import * as utils from '../serviços/utils';
 
 const AuthContexto = createContext({signed: false, user: {}});
 
@@ -12,8 +13,7 @@ export const AuthProvider = ({children}) => {
 
   useEffect(() => {
     async function loadStorageData() {
-      const storageUser = await AsyncStorage.getItem('@RNAuth:user');
-      const storageToken = await AsyncStorage.getItem('@RNAuth:token');
+      const {storageUser, storageToken} = utils.getUser();
 
       if (storageUser && storageToken) {
         setUser(storageUser);
@@ -76,8 +76,7 @@ export const AuthProvider = ({children}) => {
     });
 
     if (response.status === 200 && response.data.token !== undefined) {
-      await AsyncStorage.setItem('@RNAuth:user', username);
-      await AsyncStorage.setItem('@RNAuth:token', response.data.token);
+      utils.storeUser(response.data.token, username);
       setUser(username);
     } else {
       Alert.alert('Erro', 'E-mail e/ou senha incorretos', [{text: 'OK'}], {

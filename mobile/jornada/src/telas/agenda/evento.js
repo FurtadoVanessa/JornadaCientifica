@@ -10,7 +10,7 @@ function Evento(props) {
         <Text style={Estilos.simpleText}>{props.title}</Text>
         <Text style={Estilos.heads}>Horário</Text>
         <Text style={Estilos.simpleText}>{props.hour}</Text>
-        <Text style={Estilos.heads}> Local </Text>
+        <Text style={Estilos.heads}>Local </Text>
         <Text style={Estilos.simpleText}>{props.location}</Text>
       </View>
     </View>

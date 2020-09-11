@@ -8,8 +8,8 @@ const Estilos = StyleSheet.create({
   },
 
   video: {
-    height: 200,
-    width: 300,
+    height: Dimensions.get('window').height * 0.3,
+    width: Dimensions.get('window').width * 0.85,
     marginTop: 10,
   },
   card: {
@@ -23,21 +23,26 @@ const Estilos = StyleSheet.create({
   event: {
     flex: 1,
     flexDirection: 'column',
-    paddingHorizontal: 10,
     backgroundColor: '#ffffff',
-    borderWidth: 5,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 6,
+    padding: 15,
     borderRadius: 10,
-    borderColor: '#2F9E41',
-    paddingBottom: 10,
   },
 
   heads: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 16,
   },
 
   simpleText: {
-    fontSize: 14,
+    fontSize: 18,
   },
 });
 
