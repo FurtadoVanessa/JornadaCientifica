@@ -1,17 +1,7 @@
 import * as React from 'react';
-import {
-  Button,
-  View,
-  Text,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
-
+import {View, Text, SafeAreaView, ScrollView} from 'react-native';
 import {ButtonContainer, ButtonText} from '../../components/Button';
-
-import {TextInputStyled} from '../../components/Form';
+import {InputStyled} from '../../components/Form';
 import Estilos from './estilo';
 
 function detalhesEvento({route}) {
@@ -26,15 +16,19 @@ function detalhesEvento({route}) {
           <View style={Estilos.card}>
             <View style={Estilos.event}>
               <Text style={Estilos.heads}>Título</Text>
-              <Text style={Estilos.simpleText}>{nomeEvento}</Text>
+              <Text style={Estilos.simpleText}>
+                {JSON.stringify(nomeEvento)}
+              </Text>
               <Text style={Estilos.heads}>Responsáveis</Text>
-              <Text style={Estilos.simpleText}>{nomeResposaveis}</Text>
+              <Text style={Estilos.simpleText}>
+                {JSON.stringify(nomeResposaveis)}
+              </Text>
               <Text style={Estilos.heads}>Sinopse </Text>
-              <Text style={Estilos.simpleText}>{sinopse}</Text>
+              <Text style={Estilos.simpleText}>{JSON.stringify(sinopse)}</Text>
             </View>
           </View>
           <Text style={Estilos.heads}>Insira a chave para fazer check-in </Text>
-          <TextInputStyled />
+          <InputStyled />
           <ButtonContainer>
             <ButtonText>Check-In</ButtonText>
           </ButtonContainer>
