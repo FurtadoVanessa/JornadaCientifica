@@ -7,7 +7,6 @@ import Estilos from './estilo';
 function detalhesEvento({route}) {
   const {nomeEvento} = route.params;
   const {nomeResposaveis} = route.params;
-  console.log(nomeResposaveis);
   const {sinopse} = route.params;
 
   return (
