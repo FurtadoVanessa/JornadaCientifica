@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {TouchableOpacity} from 'react-native';
+
 export const BackContainer = styled(TouchableOpacity)`
   background-color: #ffff;
   padding: 10px 60px;

@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import {TouchableOpacity, Text} from 'react-native';
+import {TouchableOpacity, Dimensions} from 'react-native';
 
 export const ButtonContainer = styled(TouchableOpacity)`
   background-color: #2f9e41;
-  width: 320px;
+  width: 95%;
   height: 40px;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  margin-top: 3%;
 `;
 
 export const ButtonText = styled.Text`

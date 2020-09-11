@@ -14,7 +14,7 @@ const Estilos = StyleSheet.create({
     fontWeight: 'bold',
   },
   pickerContainer: {
-    width: 320,
+    width: Dimensions.get('window').width * 0.95,
     height: 40,
     margin: 10,
     borderColor: '#000000',

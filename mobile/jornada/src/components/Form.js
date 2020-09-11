@@ -4,7 +4,7 @@ import {TextInput, Text} from 'react-native';
 
 const TextInputStyled = styled(TextInput)`
   background-color: #ffff;
-  width: 320px;
+  width: 95%;
   height: 40px;
   margin: 10px;
   border: 1px dashed ${props => (props.red ? '#E00' : '#000000')};

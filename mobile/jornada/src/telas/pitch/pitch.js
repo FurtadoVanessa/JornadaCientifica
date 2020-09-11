@@ -29,7 +29,7 @@ export default function Pitch() {
 
   //youtube();
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView>
       <ScrollView>
         <View style={Estilos.container}>{pitches}</View>
       </ScrollView>

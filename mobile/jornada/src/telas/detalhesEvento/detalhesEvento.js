@@ -10,7 +10,7 @@ function detalhesEvento({route}) {
   const {sinopse} = route.params;
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView>
       <ScrollView>
         <View style={Estilos.container}>
           <View style={Estilos.card}>

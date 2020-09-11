@@ -1,13 +1,5 @@
-import * as React from 'react';
-import {
-  Button,
-  View,
-  Text,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import React, {useContext} from 'react';
+import {View, SafeAreaView, ScrollView, TouchableOpacity} from 'react-native';
 import Estilos from './estilo';
 import Evento from './evento';
 import {api} from '../../serviços/axios';
@@ -25,25 +17,29 @@ function Agenda({navigation}) {
     loadEvents();
   }, []);
 
-  const eventos = data.map((data, i) => {
+  const eventos = data.map((eventData, i) => {
     return (
       <TouchableOpacity
         key={i}
         style={Estilos.container}
         onPress={() => {
           navigation.navigate('Detalhes do Evento', {
-            nomeEvento: data.name,
-            nomeResposaveis: data.speaker,
-            sinopse: data.description,
+            nomeEvento: eventData.name,
+            nomeResposaveis: eventData.speaker,
+            sinopse: eventData.description,
           });
         }}>
-        <Evento title={data.name} hour={data.hour} location={data.place} />
+        <Evento
+          title={eventData.name}
+          hour={eventData.hour}
+          location={eventData.place}
+        />
       </TouchableOpacity>
     );
   });
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView>
       <ScrollView>
         <View style={Estilos.container}>{eventos}</View>
       </ScrollView>
