@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import {TouchableOpacity, Text} from 'react-native';
 
@@ -15,3 +16,11 @@ export const ButtonText = styled.Text`
   font-weight: bold;
   color: #ffff;
 `;
+
+export const StyledButton = ({text, onPress}) => {
+  return (
+    <ButtonContainer onPress={onPress}>
+      <ButtonText>{text}</ButtonText>
+    </ButtonContainer>
+  );
+};

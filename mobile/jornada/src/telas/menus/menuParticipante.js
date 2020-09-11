@@ -3,7 +3,7 @@ import {View, Image, TouchableOpacity} from 'react-native';
 import Estilos from './estilo';
 import Icon from 'react-native-vector-icons/Entypo';
 
-import {ButtonContainer, ButtonText} from '../../components/Button';
+import {StyledButton} from '../../components/Button';
 
 import AuthContexto from '../../contexto/contextoAuth';
 
@@ -23,18 +23,19 @@ function MenuParticipante({navigation}) {
         source={require('../../imagens/logo-jornada.png')}
         style={Estilos.logo}
       />
-      <ButtonContainer onPress={() => navigation.navigate('Agenda')}>
-        <ButtonText>Agenda</ButtonText>
-      </ButtonContainer>
-      <ButtonContainer onPress={() => navigation.navigate('CheckIn')}>
-        <ButtonText>Check-in</ButtonText>
-      </ButtonContainer>
-      <ButtonContainer onPress={() => navigation.navigate('Histórico')}>
-        <ButtonText>Histórico</ButtonText>
-      </ButtonContainer>
-      <ButtonContainer onPress={() => navigation.navigate('Pitch')}>
-        <ButtonText>Pitch</ButtonText>
-      </ButtonContainer>
+      <StyledButton
+        text="Agenda"
+        onPress={() => navigation.navigate('Agenda')}
+      />
+      <StyledButton
+        text="Check-in"
+        onPress={() => navigation.navigate('CheckIn')}
+      />
+      <StyledButton
+        text="Histórico"
+        onPress={() => navigation.navigate('Histórico')}
+      />
+      <StyledButton text="Pitch" onPress={() => navigation.navigate('Pitch')} />
     </View>
   );
 }

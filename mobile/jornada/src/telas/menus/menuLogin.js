@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, Image} from 'react-native';
 import Estilos from './estilo';
-import {ButtonContainer, ButtonText} from '../../components/Button';
+import {StyledButton} from '../../components/Button';
 
 function MenuLogin({navigation}) {
   return (
@@ -11,14 +11,14 @@ function MenuLogin({navigation}) {
         source={require('../../imagens/logo-jornada.png')}
         style={Estilos.logo}
       />
-
-      <ButtonContainer onPress={() => navigation.navigate('Login')}>
-        <ButtonText>Entrar</ButtonText>
-      </ButtonContainer>
-
-      <ButtonContainer onPress={() => navigation.navigate('Cadastro')}>
-        <ButtonText>Cadastrar</ButtonText>
-      </ButtonContainer>
+      <StyledButton
+        text="Entrar"
+        onPress={() => navigation.navigate('Login')}
+      />
+      <StyledButton
+        text="Cadastrar"
+        onPress={() => navigation.navigate('Cadastro')}
+      />
     </View>
   );
 }

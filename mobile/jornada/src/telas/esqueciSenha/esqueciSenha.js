@@ -2,8 +2,11 @@ import React, {useContext} from 'react';
 import {View, ScrollView, Text, TextInput, Image} from 'react-native';
 
 import {useState} from 'react';
-import {ButtonContainer, ButtonText} from '../../components/Button';
+
+import {StyledButton} from '../../components/Button';
+import {InputStyled} from '../../components/Form';
 import AuthContexto from '../../contexto/contextoAuth';
+
 import Estilos from './estilo';
 
 const EsqueciSenha = ({navigation}) => {
@@ -28,16 +31,12 @@ const EsqueciSenha = ({navigation}) => {
           source={require('../../imagens/logo-jornada.png')}
           style={Estilos.logo}
         />
-        <View style={Estilos.formulario}>
-          <Text style={Estilos.texto}>E-mail</Text>
-          <TextInput
-            style={Estilos.entradaTexto}
-            onChangeText={mail => setEmail(mail)}
-          />
-          <ButtonContainer onPress={handleLostPassword}>
-            <ButtonText>Recuperar senha</ButtonText>
-          </ButtonContainer>
-        </View>
+        <InputStyled
+          text="E-mail"
+          red={true}
+          onChangeText={mail => setEmail(mail)}
+        />
+        <StyledButton text="Recuperar senha" onPress={handleLostPassword} />
       </View>
     </ScrollView>
   );
