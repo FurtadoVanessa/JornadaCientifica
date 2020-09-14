@@ -7,7 +7,6 @@ const Estilos = StyleSheet.create({
     paddingHorizontal: 10,
     justifyContent: 'space-around',
     paddingBottom: 25,
-    paddingTop: 25,
   },
   logo: {
     height: Dimensions.get('window').height * 0.36,

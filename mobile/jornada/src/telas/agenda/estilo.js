@@ -2,7 +2,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 
 const Estilos = StyleSheet.create({
   container: {
-    alignItems: 'flex-start',
+    alignItems: 'center',
     flex: 1,
     paddingHorizontal: 10,
   },
@@ -14,7 +14,6 @@ const Estilos = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
   },
-
   event: {
     flex: 1,
     flexDirection: 'column',
@@ -27,12 +26,9 @@ const Estilos = StyleSheet.create({
     },
     shadowOpacity: 0.27,
     shadowRadius: 4.65,
-
     elevation: 6,
     padding: 10,
-    // borderWidth: 5,
     borderRadius: 10,
-    // borderColor: '#2F9E41',
   },
 
   heads: {

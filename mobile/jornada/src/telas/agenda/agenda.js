@@ -3,6 +3,7 @@ import {View, SafeAreaView, ScrollView, TouchableOpacity} from 'react-native';
 import Estilos from './estilo';
 import Evento from './evento';
 import {api} from '../../serviços/axios';
+import {Back} from '../../components/Back';
 
 function Agenda({navigation}) {
   const [data, setData] = React.useState([]);
@@ -39,11 +40,12 @@ function Agenda({navigation}) {
   });
 
   return (
-    <SafeAreaView>
-      <ScrollView>
+    <ScrollView>
+      <SafeAreaView>
+        <Back onPress={() => navigation.goBack()} />
         <View style={Estilos.container}>{eventos}</View>
-      </ScrollView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </ScrollView>
   );
 }
 

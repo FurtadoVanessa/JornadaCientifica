@@ -12,10 +12,26 @@ const AuthStack = createStackNavigator();
 function RotaNoAuth() {
   return (
     <AuthStack.Navigator initialRouteName={MenuLogin}>
-      <AuthStack.Screen name="Menu Login" component={MenuLogin} />
-      <AuthStack.Screen name="Login" component={Login} />
-      <AuthStack.Screen name="Cadastro" component={Cadastro} />
-      <AuthStack.Screen name="EsqueciSenha" component={EsqueciSenha} />
+      <AuthStack.Screen
+        name="Menu Login"
+        component={MenuLogin}
+        options={{headerShown: false}}
+      />
+      <AuthStack.Screen
+        name="Login"
+        component={Login}
+        options={{headerShown: false}}
+      />
+      <AuthStack.Screen
+        name="Cadastro"
+        component={Cadastro}
+        options={{headerShown: false}}
+      />
+      <AuthStack.Screen
+        name="EsqueciSenha"
+        component={EsqueciSenha}
+        options={{headerShown: false}}
+      />
     </AuthStack.Navigator>
   );
 }

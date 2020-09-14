@@ -5,7 +5,6 @@ const Estilos = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     paddingBottom: 25,
-    paddingTop: 25,
   },
   texto: {
     alignItems: 'center',

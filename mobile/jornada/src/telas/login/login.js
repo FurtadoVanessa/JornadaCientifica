@@ -10,6 +10,7 @@ import {
 import Estilos from './estilo';
 import {InputStyled} from '../../components/Form';
 import {StyledButton} from '../../components/Button';
+import {Back} from '../../components/Back';
 
 import AuthContexto from '../../contexto/contextoAuth';
 
@@ -19,7 +20,7 @@ const Login = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   // console.log(signed);
-  // console.log(user);
+  console.log(navigation);
 
   async function handleSignIn() {
     if (email === '' || password === '') {
@@ -31,6 +32,7 @@ const Login = ({navigation}) => {
   return (
     <ScrollView>
       <SafeAreaView style={Estilos.container}>
+        <Back onPress={() => navigation.goBack()} />
         <Image
           resizeMode={'contain'}
           source={require('../../imagens/logo-jornada.png')}

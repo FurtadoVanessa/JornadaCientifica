@@ -5,11 +5,12 @@ import {isEmail} from 'validator';
 
 import {InputStyled} from '../../components/Form';
 import {StyledButton} from '../../components/Button';
+import {Back} from '../../components/Back';
 import Estilos from './estilo';
 
 import AuthContexto from '../../contexto/contextoAuth';
 
-export default function App() {
+export default function App({navigation}) {
   const {register} = useContext(AuthContexto);
   const [type, setType] = useState('1');
   const [name, setName] = useState('');
@@ -67,6 +68,7 @@ export default function App() {
   return (
     <ScrollView>
       <SafeAreaView style={Estilos.container}>
+        <Back onPress={() => navigation.goBack()} />
         <InputStyled text="Nome" onChangeText={name1 => setName(name1)} />
         <InputStyled text="E-mail" onChangeText={email1 => setEmail(email1)} />
         <InputStyled

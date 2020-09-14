@@ -1,10 +1,12 @@
 import * as React from 'react';
 import {View, Text, SafeAreaView, ScrollView} from 'react-native';
-import {ButtonContainer, ButtonText} from '../../components/Button';
+import {StyledButton} from '../../components/Button';
 import {InputStyled} from '../../components/Form';
+import {Back} from '../../components/Back';
+
 import Estilos from './estilo';
 
-function detalhesEvento({route}) {
+function detalhesEvento({route, navigation}) {
   const {nomeEvento} = route.params;
   const {nomeResposaveis} = route.params;
   const {sinopse} = route.params;
@@ -12,6 +14,7 @@ function detalhesEvento({route}) {
   return (
     <SafeAreaView>
       <ScrollView>
+        <Back onPress={() => navigation.goBack()} />
         <View style={Estilos.container}>
           <View style={Estilos.card}>
             <View style={Estilos.event}>
@@ -23,11 +26,8 @@ function detalhesEvento({route}) {
               <Text style={Estilos.simpleText}>{sinopse}</Text>
             </View>
           </View>
-          <Text style={Estilos.heads}>Insira a chave para fazer check-in </Text>
-          <InputStyled />
-          <ButtonContainer>
-            <ButtonText>Check-In</ButtonText>
-          </ButtonContainer>
+          <InputStyled text={'Insira a chave para fazer check-in '} />
+          <StyledButton text={'Check-In'} />
         </View>
       </ScrollView>
     </SafeAreaView>

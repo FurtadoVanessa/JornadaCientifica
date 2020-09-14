@@ -15,12 +15,36 @@ const Stack = createStackNavigator();
 function RotaParticipante() {
   return (
     <Stack.Navigator initialRouteName={MenuParticipante}>
-      <Stack.Screen name="Menu Participante" component={MenuParticipante} />
-      <Stack.Screen name="Agenda" component={Agenda} />
-      <Stack.Screen name="CheckIn" component={CheckIn} />
-      <Stack.Screen name="Histórico" component={Historico} />
-      <Stack.Screen name="Pitch" component={Pitch} />
-      <Stack.Screen name="Detalhes do Evento" component={detalhesEvento} />
+      <Stack.Screen
+        name="Menu Participante"
+        component={MenuParticipante}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Agenda"
+        component={Agenda}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="CheckIn"
+        component={CheckIn}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Histórico"
+        component={Historico}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Pitch"
+        component={Pitch}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Detalhes do Evento"
+        component={detalhesEvento}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 }

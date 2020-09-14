@@ -6,7 +6,6 @@ const Estilos = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
     justifyContent: 'space-around',
-    marginTop: 25,
     marginBottom: 25,
   },
   logo: {

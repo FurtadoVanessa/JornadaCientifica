@@ -1,11 +1,12 @@
 import * as React from 'react';
 import {Button, View, Text, SafeAreaView, ScrollView} from 'react-native';
+import {Back} from '../../components/Back';
 import Estilos from './estilo';
 import YouTube from 'react-native-youtube';
 import Projeto from './projeto';
 import {api} from '../../serviços/axios';
 
-export default function Pitch() {
+export default function Pitch({navigation}) {
   const [data, setData] = React.useState([]);
 
   React.useEffect(() => {
@@ -31,6 +32,7 @@ export default function Pitch() {
   return (
     <SafeAreaView>
       <ScrollView>
+        <Back onPress={() => navigation.goBack()} />
         <View style={Estilos.container}>{pitches}</View>
       </ScrollView>
     </SafeAreaView>

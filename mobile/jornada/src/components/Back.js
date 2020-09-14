@@ -1,10 +1,26 @@
+import React from 'react';
+
 import styled from 'styled-components';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
+import Icon from 'react-native-vector-icons/Entypo';
 
 export const BackContainer = styled(TouchableOpacity)`
-  background-color: #ffff;
-  padding: 10px 60px;
-  margin: 10px;
-  border: 2px solid #000000;
-  border-radius: 10px;
+  padding: 10px;
+  align-items: flex-start;
+  justify-content: center;
 `;
+
+export const BackView = styled(View)`
+  width: 100%;
+  justify-content: flex-start;
+`;
+
+export const Back = ({onPress, style}) => {
+  return (
+    <BackView>
+      <BackContainer onPress={onPress} style={style}>
+        <Icon name="arrow-left" size={32} color="#2f9e41" />
+      </BackContainer>
+    </BackView>
+  );
+};
