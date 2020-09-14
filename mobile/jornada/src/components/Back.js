@@ -8,6 +8,7 @@ export const BackContainer = styled(TouchableOpacity)`
   padding: 10px;
   align-items: flex-start;
   justify-content: center;
+  width: 15%;
 `;
 
 export const BackView = styled(View)`
