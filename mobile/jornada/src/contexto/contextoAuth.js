@@ -82,7 +82,6 @@ export const AuthProvider = ({children}) => {
         cancelable: true,
       });
     }
-    console.log(response);
     setLoading(false);
   }
 

@@ -14,9 +14,6 @@ const EsqueciSenha = ({navigation}) => {
   const {resetPassword} = useContext(AuthContexto);
   const [email, setEmail] = useState('');
 
-  // console.log(signed);
-  // console.log(user);
-
   function handleLostPassword() {
     if (email === '') {
       return;

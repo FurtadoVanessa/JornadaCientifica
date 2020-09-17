@@ -18,7 +18,6 @@ export async function register(data) {
   return await api
     .post('/register', data)
     .then(function(response) {
-      console.log(response);
       return response;
     })
     .catch(function(response) {

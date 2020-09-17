@@ -17,13 +17,14 @@ export default function Pitch({navigation}) {
     loadPitches();
   }, []);
 
-  const pitches = data.map((data, i) => {
+  const pitches = data.map((d, i) => {
     return (
       <Projeto
-        title={data.name}
-        participantes={data.group}
-        resumo={data.description}
-        link={data.link}
+        key={d.id}
+        title={d.name}
+        participantes={d.group}
+        resumo={d.description}
+        link={d.link}
       />
     );
   });

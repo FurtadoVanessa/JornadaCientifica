@@ -29,14 +29,3 @@ export default function Projeto(props) {
     </View>
   );
 }
-
-// function youtube() {
-//   YouTubeStandaloneAndroid.playVideo({
-//     apiKey: 'AIzaSyDwTreTL1dKphDeoj6krJHK89OsxJRLA90', // Your YouTube Developer API Key
-//     videoId: 'G_sBOsh-vyI', // YouTube video ID
-//     autoplay: true, // Autoplay the video
-//     startTime: 0, // Starting point of video (in seconds)
-//   })
-//     .then(() => console.log('Standalone Player Exited'))
-//     .catch(errorMessage => console.error(errorMessage));
-// }

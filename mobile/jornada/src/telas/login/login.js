@@ -19,9 +19,6 @@ const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // console.log(signed);
-  console.log(navigation);
-
   async function handleSignIn() {
     if (email === '' || password === '') {
       return;
