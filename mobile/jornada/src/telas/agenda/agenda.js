@@ -19,6 +19,7 @@ function Agenda({navigation}) {
   }, []);
 
   const eventos = data.map((eventData, i) => {
+    console.log(eventData);
     return (
       <TouchableOpacity
         key={i}
@@ -28,6 +29,8 @@ function Agenda({navigation}) {
             nomeEvento: eventData.name,
             nomeResposaveis: eventData.speaker,
             sinopse: eventData.description,
+            key: eventData.key,
+            id: eventData.id,
           });
         }}>
         <Evento

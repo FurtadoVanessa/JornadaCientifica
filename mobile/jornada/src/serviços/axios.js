@@ -24,8 +24,8 @@ api.interceptors.request.use(
     return utils
       .getUser()
       .then(user => {
-        console.log('user ', user);
-        console.log('user token', user.storageToken);
+        // console.log('user ', user);
+        // console.log('user token', user.storageToken);
         if (user.storageToken) {
           config.headers.Authorization = `Bearer ${user.storageToken}`;
         }
