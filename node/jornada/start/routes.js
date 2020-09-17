@@ -11,7 +11,6 @@ Route.group(() => {
     Route.post('/modality', 'ModalityController.store')
     Route.post('/project', 'ProjectController.store')
     Route.post('/event', 'EventController.store')
-    Route.post('/userProject', 'UserProjectController.store')
     Route.post('/certificate', 'CertificateController.store')
     Route.post('/type', 'TypeController.store')
 
@@ -30,7 +29,8 @@ Route.group(() => {
     Route.get('/modality', 'ModalityController.index')
     Route.get('/category', 'CategoryController.index')
     Route.get('/grade', 'GradeController.index')
-    Route.get('/userProject', 'UserProjectController.index') 
+    Route.get('/userHistory', 'UserHistoryController.index')
+    Route.post('/userHistory', 'UserHistoryController.store')
     Route.get('/meal', 'MealController.index')
     Route.get('/event', 'EventController.index')
     Route.get('/type', 'TypeController.index')
