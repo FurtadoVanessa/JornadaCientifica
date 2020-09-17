@@ -10,8 +10,9 @@ class UserHistoryController {
         await Event.findOrFail(event_id)
         return await UserHistory.create({user_id:id, event_id})
     }
-    async index () {
-        return await UserHistory.query().with('event').select('event_id').fetch()
+    async index ({auth}) {
+        const {id} = auth.user;
+        return await UserHistory.query().with('event').select('event_id').where('user_id', '=', id).fetch()
     }
 }
 module.exports = UserHistoryController
