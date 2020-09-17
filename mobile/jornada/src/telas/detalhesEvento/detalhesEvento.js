@@ -8,7 +8,6 @@ import {Back} from '../../components/Back';
 import Estilos from './estilo';
 
 const detalhesEvento = ({route, navigation}) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [key, setKey] = useState('');
   const {
     nomeEvento,
